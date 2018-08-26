@@ -46,8 +46,8 @@ function refreshAns(){
     refresh.addEventListener("click", function (e) {
         e.preventDefault();
         container.innerHTML= "";
+        refresh.classList.remove("visible");
     });
-    refresh.classList.remove("visible");
 }
 
 handleSubmit();

@@ -2,10 +2,30 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
+*{
+    font-family: 'Kurale', serif;
+    color:white;
+}
+body{
+    background: linear-gradient(to bottom, #903D64, #1B1115);
+    height: 100vh;
+    padding: 10px 50px;
+}
+.splash,
+.ask-screen{
+    height: 100vh;
+    display: flex;
+}
+h1,
+h2,
+form{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 button{
     display:none;
 }
-
 .visible{
     display: block;
 }
