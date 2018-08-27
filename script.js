@@ -1,5 +1,7 @@
-const container = document.querySelector("#reply");
-const refresh = document.querySelector('#btn-refresh');
+const form = document.querySelector("#question");
+const container = document.querySelector("#response");
+const askBox = document.querySelector("#ask-box");
+const refreshBtn = document.querySelector('#btn-refresh');
 
 const replies = [
     "Do what your heart desires",
@@ -10,7 +12,7 @@ const replies = [
 
 //Handle Form Submit
 function handleSubmit(){
-    document.querySelector("#question").addEventListener("submit", function (e) {
+    form.addEventListener("submit", function (e) {
         e.preventDefault();    //stop form from submitting
         clearReplies();
         getRandomReply();
@@ -30,23 +32,24 @@ function clearReplies(){
 function getRandomReply(){
     const randoInt = Math.floor(Math.random() * 4); 
     const randoReply = document.createTextNode(replies[randoInt]);
-    const reply = document.createElement("p");
-    reply.appendChild(randoReply);
-    container.appendChild(reply);
+    const response = document.createElement("p");
+    response.appendChild(randoReply);
+    container.appendChild(response);
 }
 
 //Display refresh button after replies append to page
 function displayButton(){
-   refresh.classList.add("visible");
-   refreshAns();
+   refreshBtn.classList.add("visible");
+   handleRefresh();
 }
 
 //Handle Refresh of answers 
-function refreshAns(){
-    refresh.addEventListener("click", function (e) {
+function handleRefresh(){
+    refreshBtn.addEventListener("click", function (e) {
         e.preventDefault();
         container.innerHTML= "";
-        refresh.classList.remove("visible");
+        refreshBtn.classList.remove("visible");
+        askBox.value ="";
     });
 }
 
