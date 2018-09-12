@@ -1,10 +1,13 @@
+// const styleSheet = document.querySelector("style")
 const form = document.querySelector("#question");
 const container = document.querySelector("#response");
+const askScreen = document.querySelector("#ask-screen");
 const askBox = document.querySelector("#ask-box");
-const refreshBtn = document.querySelector('#btn-refresh');
+const refreshBtn = document.querySelector('.btn-refresh');
 
 const replies = [
     "Do what your heart desires",
+    "Your luck is terrible right now. I sense that things will turn around Christmas.",
     "What are you doing with your life? That's a terrible decision",
     "Try it, doesn't hurt.",
     "Y.O.L.O"
@@ -33,14 +36,15 @@ function getRandomReply(){
     const randoInt = Math.floor(Math.random() * 4); 
     const randoReply = document.createTextNode(replies[randoInt]);
     const response = document.createElement("p");
+    container.scrollIntoView(true);
     response.appendChild(randoReply);
     container.appendChild(response);
 }
 
 //Display refresh button after replies append to page
 function displayButton(){
-   refreshBtn.classList.add("visible");
-   handleRefresh();
+    refreshBtn.classList.add("visible");
+    handleRefresh();
 }
 
 //Handle Refresh of answers 
@@ -49,7 +53,8 @@ function handleRefresh(){
         e.preventDefault();
         container.innerHTML= "";
         refreshBtn.classList.remove("visible");
-        askBox.value ="";
+        askScreen.scrollIntoView({behavior: "smooth"});
+        askBox.value = "";
     });
 }
 

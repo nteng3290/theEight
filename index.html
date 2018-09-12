@@ -10,20 +10,35 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="splash">
-           <h1><span>th</span><span>|</span>Eight</h1>
-        </div class="">
-        <div class="ask-screen">
-            <h2>ask away ...</h2>
-            <form id="question">
-                <input type="text" id="ask-box">
-                <input type="submit" name="askBtn" id="askBtn" class="btn-style"> 
-            </form>
+        <div class="inner-wrapper">
+            <div class="splash">
+                <div class="clouds left top">
+                    <div class="cloud cloud1"></div>
+                    <div class="cloud cloud2"></div>
+                    <div class="cloud cloud3"></div>
+                </div>
+                <div class="clouds right">
+                    <div class="cloud cloud4"></div>
+                    <div class="cloud cloud5"></div>
+                    <div class="cloud cloud6"></div>
+                </div>
+                <div class="clouds left bottom">
+                    <div class="cloud cloud7"></div>
+                    <div class="cloud cloud8"></div>
+                </div>
+               <h1><span>the</span><span>|</span>Eight</h1>
+            </div class="">
+            <div id="ask-screen" class="ask-screen">
+                <h2>ask away ...</h2>
+                <form id="question">
+                    <input type="text" id="ask-box">
+                    <button type="submit" id="btn-ask" class="btn-style">ask</button>
+                </form>
+            </div>
+            <div id="response" class="response-style">
+            </div>
+            <a href="#ask-screen" class="btn-style btn-refresh">Ask again</a>
         </div>
-        <div id="response" class="">
-            
-        </div>
-        <button id="btn-refresh" class="btn-style">Ask again</button>
     </div>
 </body>
 <script src="./script.js"></script>

@@ -2,6 +2,85 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
+/* fade in */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% { 
+    opacity: 1;
+  }
+}
+/* slide animation */
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+            opacity: 0;
+  }
+  25%{
+      opacity: 0.5;
+  }
+  50%{
+    -webkit-transform: translateX(150px);
+            transform: translateX(150px);  
+            opacity: 1;   
+  }
+  75%{
+      opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+            opacity: 0;
+  }
+}
+
+/* slide and disappear */
+@keyframes slide-disappear {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+            opacity: 0;
+  }
+  25%{
+    opacity: 0.5;
+  }
+  50%{
+    opacity: 1;   
+  }
+  75%{
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translateX(150px);
+            transform: translateX(150px);
+            opacity: 0;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+            opacity: 0;
+  }
+  25%{
+    opacity: 0.5;
+  }
+  50%{
+    opacity: 1;   
+  }
+  75%{
+      opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translateX(-150px);
+            transform: translateX(-150px);
+            opacity: 0;
+  }
+}
+
 *{
     font-family: 'Kurale', serif;
     color:white;
@@ -10,7 +89,15 @@ body{
     background: fixed linear-gradient(to bottom, #903D64, #1B1115);
     /* background: fixed; */
     height: 100vh;
-    padding: 10px 50px;
+    padding: 30px 40px;
+    text-shadow: 0 2px 3px #000;
+}
+.inner-wrapper{
+    /* width: 95%; */
+    margin: 0 auto;
+    border: 2px solid white;
+    border-radius: 120px;
+    padding: 15px;
 }
 @media (min-width: 768px) {
    .wrapper{
@@ -34,17 +121,103 @@ input{
 h1{
     font-size: 40px;
     line-height: 1.2;
+    position: relative;
+    bottom: 120px;
+}
+span:first-of-type{
+    position: relative;
+    bottom: 10px;
+}
+span:first-of-type + span{
+    font-size: 60px;
+    font-weight: 100;
 }
 h2{
     width: 100%;
     text-align: left;
 }
+.splash{
+    position: relative;
+}
+.clouds{
+    position: absolute;
+}
+.clouds.left{
+    left: -60px;
+}
+.clouds.left.top{
+    top: 40px;
+    animation: slide-right 10s ease-out infinite;
+}
+.clouds.left.bottom{
+    top: 430px;
+    animation: slide-disappear 8s infinite;
+}
+.clouds.right{
+    right:0;
+    top: 230px;
+    animation: slide-left 8s infinite;
+}
+.cloud{
+    display: block;
+    position: absolute;
+    height: 45px;
+    border-radius: 100px 100px;
+}
+.cloud1{
+    left:-30px;
+    width: 200px;
+    background: rgba(255,255,255,0.3);
+}
+.cloud2{
+    top:45px;
+    left:-80px;
+    width: 300px;
+    background: rgba(255,255,255,0.4);
+}
+.cloud3{
+    top:90px;
+    left:-40px;
+    width: 200px;
+    background: rgba(255,255,255,0.5);
+}
+.cloud4{
+    right:-50px;
+    width: 180px;
+    background: rgba(255,255,255,0.6);
+}
+.cloud5{
+    top:45px;
+    right:-20px;
+    width: 250px;
+    background: rgba(255,255,255,0.7);
+}
+.cloud6{
+    top:90px;
+    right:-40px;
+    width: 220px;
+    background: rgba(255,255,255,0.8);
+}
+.cloud7{
+    left:-50px;
+    width: 250px;
+    background: rgba(255,255,255,0.9);
+}
+.cloud8{
+    top:45px;
+    left: 10px;
+    width: 250px;
+    background: rgba(255,255,255,1);
+}
+
 .splash,
-.ask-screen{
+.ask-screen,
+.response-style{
     height:100vh;
 }
 .splash,
 .ask-screen,
+.response-style,
 form{
     display: flex;
     flex-direction: column;
@@ -56,21 +229,33 @@ input[type=text]{
     border: none;
     border-bottom: 1px solid #707070;
 }
-button{
+.btn-refresh{
     display:none; 
+    position: absolute;
+    bottom: 150px;
 }
 .btn-style{
     background: none;
     padding: 5px 10px;
     border: none;
     position: relative;
+    animation: fade-in 2s both;
+}
+.response-style p {
+    animation: fade-in 2s both;
 }
 .btn-style:before{
     content: "";
-    width: 100%;
+    width: 120%;
     position: absolute;
-    border-bottom: 1px solid white;
+    top: 0;
+    left: 0;
+    border-bottom: 2px solid white;
 }
-.visible{
+.btn-refresh.visible{
     display: block;
+    margin: 0 auto;
+}
+.response-style p {
+    text-align: center;
 }
