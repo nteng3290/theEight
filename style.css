@@ -111,6 +111,9 @@ body{
         max-width: 50%;
     }
 }
+a{
+    text-decoration: none;
+}
 h1,
 h2,
 input{
@@ -233,13 +236,19 @@ input[type=text]{
     bottom: 150px;
 }
 .btn-style{
-    background: none;
-    padding: 5px 10px;
-    border: none;
-    position: relative;
     animation: fade-in 2s both;
+    background: none;
+    border: none;
+    display: block;
+    padding: 5px 10px;
+    position: relative;
     width: 100%;
     text-align: center;
+    transition: 0.7s all;
+}
+.btn-style:hover{
+    text-shadow: 0 0 5px white;
+    transform: scale(1.06);
 }
 .response-style p {
     animation: fade-in 2s both;
@@ -259,4 +268,7 @@ img{
     position: absolute;
     max-width: 100%;
     bottom: -25px;
+}
+svg path{
+    stroke-dasharray: 20
 }
