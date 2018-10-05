@@ -81,6 +81,12 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   }
 }
 
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 *{
     font-family: 'Kurale', serif;
     color:white;
@@ -264,11 +270,13 @@ input[type=text]{
     position: relative;
     width: 200px;
 }
-img{
+svg{
     position: absolute;
     max-width: 100%;
     bottom: -25px;
 }
 svg path{
-    stroke-dasharray: 20
+    animation: dash 5s infinite both;
+    stroke-dashoffset: 1000;
+    stroke-dasharray: 1000;
 }
