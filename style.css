@@ -94,9 +94,9 @@ body{
 }
 .inner-wrapper{
     /* width: 95%; */
-    margin: 0 auto;
     border: 2px solid white;
     border-radius: 120px;
+    margin: 0 auto;
     padding: 15px;
 }
 @media (min-width: 768px) {
@@ -104,8 +104,6 @@ body{
         max-width: 80%;
         margin: 0 auto;
         padding: 0 50px;
-        border-left: 1px solid #707070;
-        border-right: 1px solid #707070;
     } 
 }
 @media (min-width: 940px) {
@@ -240,17 +238,11 @@ input[type=text]{
     border: none;
     position: relative;
     animation: fade-in 2s both;
+    width: 100%;
+    text-align: center;
 }
 .response-style p {
     animation: fade-in 2s both;
-}
-.btn-style:before{
-    content: "";
-    width: 120%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-bottom: 2px solid white;
 }
 .btn-refresh.visible{
     display: block;
@@ -258,4 +250,13 @@ input[type=text]{
 }
 .response-style p {
     text-align: center;
+}
+.button{
+    position: relative;
+    width: 200px;
+}
+img{
+    position: absolute;
+    max-width: 100%;
+    bottom: -25px;
 }
