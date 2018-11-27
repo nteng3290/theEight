@@ -36,7 +36,7 @@ function getRandomReply(){
     const randoInt = Math.floor(Math.random() * 4); 
     const randoReply = document.createTextNode(replies[randoInt]);
     const response = document.createElement("p");
-    container.scrollIntoView(true);
+    container.scrollIntoView({behavior: "smooth"});
     response.appendChild(randoReply);
     container.appendChild(response);
 }
